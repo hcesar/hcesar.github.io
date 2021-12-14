@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Shared Workers</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Shared Workers</h1>
+
+    <div class="controls" tabindex="0">
+    <form>
+      <input type="text" id="password" placeholder='Insert the password (Hint: it is "123456")' style="width:600px" /><br/><br/>
+      <input type="button" value="Submit password" onclick="sendPassword()" />
+    </form>
+
+    <h3>Encrypted Message</h3>
+    <div id="encrypted">
+      7xZzJrOrVE1M1Ta6HFWZTdiQy5e9otmsdTR5r2xPnmj8+s4fgrgPOqZh4gpSa6J9NappjvtLI0tTrvFyJdQD4g==
+    </div>
+    <h3>Original Message</h3>
+    <div id="decrypted">
+    </div>
+
+
+
+    <p><a href="index2.html" target="_blank">Go to second worker page</a></p>
+  </body>
+</html>
