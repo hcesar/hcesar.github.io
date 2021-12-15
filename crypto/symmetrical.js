@@ -16,8 +16,6 @@ var vector = crypto.getRandomValues(new Uint8Array(16));
 
 window.encrypt = async function () {
   let [key, encryptedKey] = await getSymmetricalKey();
-  console.log(key, encryptedKey);
-
   let iv = window.crypto.getRandomValues(new Uint8Array(16));
 
   const encrypted = await crypto.subtle
@@ -47,16 +45,24 @@ async function getSymmetricalKey() {
     true,
     ["encrypt", "decrypt"]
   );
+  let symmetricalKeyBytes = await crypto.subtle.exportKey(
+    "raw",
+    symmetricalKey,
+    {
+      name: "AES-CTR",
+      hash: "SHA-256",
+    },
+    true,
+    ["encrypt"]
+  );
 
-  let key = await importRsaKey(elements.key.value).catch(console.error);
+  console.log(symmetricalKeyBytes);
 
-  const encrypted = await crypto.subtle
-    .encrypt(
-      { name: "RSA-OAEP", iv: vector },
-      key,
-      str2ab(elements.input.value)
-    )
+  let publicKey = await importRsaKey(elements.key.value).catch(console.error);
+
+  const encryptedSymmetricalKey = await crypto.subtle
+    .encrypt({ name: "RSA-OAEP", iv: vector }, publicKey, symmetricalKeyBytes)
     .catch(console.error);
 
-  return [symmetricalKey, encrypted];
+  return [symmetricalKey, encryptedSymmetricalKey];
 }
