@@ -1,8 +1,16 @@
-console.group("Worker created");
+console.group("Worker created", self);
 let password = null;
 const ports = [];
 
+self.onmessage = console.log;
+
 onconnect = function (e) {
+  console.group("Connected", self);
+
+  if (!e.ports) {
+    return; // WebWorkers
+  }
+
   var port = e.ports[0];
   ports.push(port);
 

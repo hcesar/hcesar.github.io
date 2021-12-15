@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Crypto</title>
+    <script src="./asymmetrical.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="page1">
+    <h1>Asymmetrical Only</h1>
+
+    <div class="controls" tabindex="0">
+      Public Key<br />
+      <textarea rows="9" cols="70" id="key">
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnE7GKI5kIWI4gMgrQWFY
+0kZZTlEuTqZjSa3KDnClMghQPaXXAoCPhdXanEATBO+txtjp9NCaU7E7/qFY49Kv
+Ak66MucalSbJMBhI5bGB+Lc/fTIHIjWNSuCyJddhSBbKGgBn5attZdTit5hdkuRj
+E90Lz0s6P9iWVv2rBgqCHJ00AWiaD12XLCQu+HEOGNooXVBsSbhB0iREPeZDUpmq
+aC8J+AZSji9h+fYKk7eNrW7fZcdv16PCvQ5hq7CFJTgbX8p0RvjM7ZNUIqT3mrLO
+zAZ4PhaYARNHbxBu+Bsx5Ib/oMcIx/LLI7EIr6Yjir5bOXq/w4hkZH+aoIxyXnCA
+iQIDAQAB
+-----END PUBLIC KEY-----</textarea
+      >
+      <br /><br />
+      Input Text<br />
+      <textarea rows="4" cols="40" id="input">
+When there is a will, there is a way</textarea
+      ><br />
+      <input type="button" value="Encrypt it" onclick="encrypt()" />
+    </div>
+    <div class="controls" tabindex="0">
+      Encrypted Message<br />
+      <textarea rows="9" cols="70" id="encrypted"></textarea>
+    </div>
+    <a href="symmetrical.html">Go to Symmetrical Test</a>
+  </body>
+</html>

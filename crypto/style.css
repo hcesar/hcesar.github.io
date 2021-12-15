@@ -26,12 +26,14 @@ p {
 
 .controls {
   padding: 4vw;
-  width: 75%;
+  width: 40%;
+  float: left;
   margin: 3vw auto;
   background-color: rgba(255, 255, 255, 0.7);
   border: 5px solid black;
   opacity: 0.3;
   transition: 1s all;
+  margin: 4px;
 }
 
 .controls, .controls {
